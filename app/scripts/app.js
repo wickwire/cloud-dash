@@ -11,6 +11,10 @@ angular.module('cloudDashApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/vmlist', {
+        templateUrl: 'views/vmlist.html',
+        controller: 'VmlistCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
