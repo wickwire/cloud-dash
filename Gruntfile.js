@@ -12,6 +12,10 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   grunt.initConfig({
+    server: {
+      port: process.env.PORT,
+      host: process.env.IP
+    },
     yeoman: {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
@@ -55,10 +59,10 @@ module.exports = function (grunt) {
     },
     connect: {
       options: {
-        port: 9000,
+        port: process.env.PORT,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
+        hostname: process.env.IP,
+        livereload: process.env.LIVERELOAD_PORT
       },
       livereload: {
         options: {
