@@ -10,8 +10,8 @@ angular.module('cloudDashApp')
 
 
 
-/*
 
+/*
     var machines=[
   {
     "name": "zondev02",
@@ -22,29 +22,6 @@ angular.module('cloudDashApp')
     "snippet": "StoppedDeallocated"
   }
 ];
-
 */
-
-
-    //$http.defaults.useXDomain = true;
-    delete $http.defaults.headers.common['X-Requested-With'];
-
-    var machines;
-    var url = "http://cloud-api-c9-wickwire.c9.io/getallvmnamesstates";
-
-    $http.get(url)
-    .then(function(data){
-
-
-      machines=data.posts;
-    })
-
-
-return {
-	machines: function(){
-
-		return machines;
-	}
-}
 
   });
